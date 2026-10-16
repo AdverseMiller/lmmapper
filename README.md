@@ -1,6 +1,6 @@
 # lmmapper
 
-`lmmapper` is an x86-64 userspace mapper for relocatable Linux kernel ELF objects. It stages sections, resolves symbols, applies relocations, writes an executable allocation, and calls a named entry point. It does not use the kernel's normal module loader. This is experimental kernel code: use a disposable VM and expect unsupported objects to fail closed.
+`lmmapper` is an x86-64 userspace mapper for relocatable Linux kernel ELF objects. It stages sections, resolves symbols, applies relocations, writes an executable allocation, and calls a named entry point. It does not use the kernel's normal module loader. It has the capability to bypass module signature enforcement given the correct primitive.
 
 ## Layout
 
@@ -21,7 +21,7 @@ make -C module LLVM=1 W=1
 make live-layout
 ```
 
-As root in a disposable VM, load the example helper, run a suitable relocatable object, then unload the helper:
+The helper module is meant to mimic an arbitrary RW primitive that could potentially be built from a kernel CVE.
 
 ```sh
 insmod module/lmmapper.ko
