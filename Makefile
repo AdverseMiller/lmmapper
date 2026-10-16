@@ -5,7 +5,7 @@ KDIR ?= /lib/modules/$(shell uname -r)/build
 KERNEL_MAKE_FLAGS ?= LLVM=1 W=1
 .DEFAULT_GOAL := all
 
-APP_OBJECTS := src/elf.o src/reloc.o src/map.o src/symbols.o src/rw.o src/rw_lmmapper.o src/live_image.o src/live_profile.o src/live_bridge.o src/live_map.o src/live_command.o src/main.o
+APP_OBJECTS := src/elf.o src/reloc.o src/map.o src/symbols.o src/rw.o src/rw_helper.o src/live_image.o src/live_profile.o src/live_bridge.o src/live_map.o src/live_command.o src/main.o
 
 -include $(APP_OBJECTS:.o=.d)
 

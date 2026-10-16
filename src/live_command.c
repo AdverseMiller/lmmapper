@@ -50,7 +50,7 @@ int lmm_live_command(int argc, char **argv) {
     result = lmm_live_open(&live, &backend);
     if (result) {
         fprintf(stderr, "Live backend unavailable: %s\n", strerror(-result));
-        if (result == -ENOENT) fprintf(stderr, "Check that 'make live-layout' completed for the running kernel and /dev/lmmapper is present.\n");
+        if (result == -ENOENT) fprintf(stderr, "Check that 'make live-layout' completed for the running kernel and /dev/helper is present.\n");
         lmm_elf_close(&image);
         return 1;
     }

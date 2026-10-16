@@ -6,7 +6,7 @@
 
 struct lmm_live;
 
-/* Convenience opener provided by the example lmmapper adapter. */
+/* Convenience opener provided by the example helper adapter. */
 int lmm_live_open(struct lmm_live **out, struct lmm_map_backend *backend);
 /* Takes ownership of *rw on a valid call, including failure; *rw is reset. The caller must provide a scratch region that may temporarily become executable. */
 int lmm_live_open_with_rw(struct lmm_rw *rw, struct lmm_live **out, struct lmm_map_backend *backend);

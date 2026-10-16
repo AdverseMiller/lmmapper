@@ -25,6 +25,6 @@ int lmm_rw_write(const struct lmm_rw *rw, uint64_t address, const void *source, 
 void lmm_rw_close(struct lmm_rw *rw);
 
 /* Example adapter backed by the module/ RW-only test device. */
-int lmm_rw_open_lmmapper(struct lmm_rw *rw);
+int lmm_rw_open_helper(struct lmm_rw *rw);
 
 #endif
